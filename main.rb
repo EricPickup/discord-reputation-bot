@@ -5,6 +5,11 @@ require 'discordrb'
 require 'json'
 require_all '../rep-bot'
 
+ActiveRecord::Base.establish_connection(
+  adapter: 'sqlite3',
+  database: '../uwindsor-css-hub/db/production.sqlite3'
+)
+
 class Main
   SECRETS = JSON.parse(File.read('secrets.json'))
 
